@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="normalize.css">
+        <title>To do list</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left">
+                <form action="" id="form" class="form">
+                    <input
+                        type="text"
+                        id="task"
+                        name="task"
+                        placeholder="Insert task..."
+                    >
+                    <input type="submit" value="Send">
+                    <p>
+                        Progress:
+                        <span id="progress"></span>
+                        %
+                    </p>
+                </form>
+            </div>
+            <div class="right">
+                <div class="pending-tasks">
+                    <h3>Pending</h3>
+                    <ul id="list"></ul>
+                    <button class="right-button" id="pending-button">Delete pending</button>
+                </div>
+                <div class="completed-tasks">
+                    <h3>Completed</h3>
+                    <ul id="list-of-completed-tasks"></ul>
+                    <button class="right-button" id="completed-button">Delete completed</button>
+                </div>
+                <button class="right-button" id="restart-button">Restart agenda</button>
+            </div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>
+<!-- data-id="" -->

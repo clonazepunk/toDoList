@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.d-f {
+  display: flex;
+  flex-wrap: wrap;
+}
+.w-100 {
+  width: 100%;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+.m-0 {
+  margin: 0 auto;
+}
+
+.w-75 {
+  width: 75%;
+}
+.error {
+  background-color: rgba(255, 0, 0, 0.322);
+  text-align: center;
+  padding: 1rem;
+  color: red;
+  border-radius: 1rem;
+  border: 3px solid red;
+  margin-top: 1rem;
+}
+.but {
+  border-radius: 5rem;
+  width: 3rem;
+  height: 3rem;
+}
+.but:hover {
+  cursor: pointer;
+}
+.but-delete {
+  background-color: rgba(255, 0, 0, 0.322);
+  color: red;
+  border: 0.15rem solid red;
+}
+.but-succ {
+  background-color: rgba(0, 128, 0, 0.322);
+  color: green;
+  border: 0.15rem solid green;
+}
+#list {
+  list-style: none;
+}
+.list {
+  border-bottom: 0.2rem solid black;
+  box-shadow: 4px 4px 9px rgba(150, 150, 150, 1);
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: white;
+}
+.completed {
+  background-color: rgba(0, 128, 49, 0.253);
+}
+.right-button {
+  border-radius: 2rem;
+  padding: 0.5rem;
+  font-weight: bold;
+  transition: all 0.3s;
+  background-color: rgb(204, 143, 52);
+  color: rgba(255, 255, 255, 0.651);
+  border: 2px solid rgb(163, 100, 5);
+}
+.right-button:hover {
+  cursor: pointer;
+  background-color: rgb(184, 114, 10);
+}
+
+.container {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+
+  min-height: 100vh;
+  width: 70vw;
+  max-width: 80rem;
+  min-width: 37.5rem;
+  margin: 0 auto;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgba(222, 184, 135, 0.301);
+  .left {
+    .form {
+      display: flex;
+      flex-direction: column;
+      label {
+        font-size: 3rem;
+        text-align: center;
+      }
+      #task {
+        width: 50vw;
+  max-width: 40rem;
+
+        border-radius: 2rem;
+        padding: 0.5rem;
+        background-color: white;
+        border: 2px solid gray;
+        color: gray;
+      }
+
+      input[type="submit"] {
+        background-color: skyblue;
+        font-weight: bold;
+        border: 2px solid rgb(107, 154, 192);
+        color: rgba(255, 255, 255, 0.651);
+        width: 50%;
+  max-width: 40rem;
+        margin: 0 auto;
+        margin-top: 2rem;
+        border-radius: 2rem;
+        transition: all 0.3s;
+      }
+      input[type="submit"]:hover {
+        cursor: pointer;
+        background-color: rgb(72, 192, 240);
+      }
+      p {
+        margin: 0 auto;
+        margin-top: 2rem;
+        cursor: default;
+      }
+    }
+  }
+  .right {
+    width: 90%;
+    text-align: center;
+    // margin: 0 auto;
+    .pending-tasks {
+      border-bottom: 2px solid black;
+      padding-bottom: 5rem;
+      list-style: none;
+      margin-bottom: 5rem;
+      text-align: left;
+    }
+    .completed-tasks {
+      border-bottom: 2px solid black;
+      padding-bottom: 5rem;
+      list-style: none;
+      margin-bottom: 5rem;
+      text-align: left;
+
+      ul {
+        list-style: none;
+      }
+    }
+    #restart-button {
+      width: 80%;
+      background-color: rgb(170, 89, 57);
+      border: 2px solid rgb(82, 52, 7);
+    }
+    #restart-button:hover {
+      background-color: rgb(170, 65, 24);
+    }
+  }
+}
+
+
+/*
+////////////////////////
+//MEDIAQUERIES//
+@media only screen and (max-width: 1528px) {
+  // .container {
+  //   width: 60vw;
+  //   margin: 0 auto;
+  // }
+}
+@media only screen and (max-width: 1200) {
+  // .container {
+  //   width: 40vw;
+  //   margin: 0 auto;
+  // }
+}
+@media only screen and (min-width: 992) {
+  .container {
+    width: 40vw;
+  }
+}
+@media only screen and (max-width: 767) {
+  // .container {
+  //   width: 70vw;
+  // }
+}
+@media only screen and (max-width: 600) {
+  .container {
+    width: 90vw;
+  }
+}
+@media only screen and (max-width: 486) {
+}
+*/
