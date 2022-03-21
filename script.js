@@ -46,12 +46,12 @@ form.addEventListener("submit", (e) => {
 });
 //Checks the input. If empty, sends error message; else creates task.
 function validateInput() {
-  if (task.value === "") {
+  if (task.value.trim() === "") {
     showMessage("Field required to proceed"); // to line 60
+    resetForm();
     return;
   }
   const newTask = new Task(task.value, arrayForId.length, false);
-  //
   resetForm(); // to line 82
   tasks.push(newTask);
   arrayForId.push(newTask);
