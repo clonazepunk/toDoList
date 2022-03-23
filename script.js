@@ -53,8 +53,9 @@ function validateInput() {
   }
   const newTask = new Task(task.value, arrayForId.length, false);
   resetForm(); // to line 82
-  tasks.push(newTask);
-  arrayForId.push(newTask);
+  tasks = [...tasks, newTask];
+  console.log(tasks);
+  arrayForId = [...arrayForId, newTask];
 }
 //Shows a 3 seconds message with the error
 function showMessage(message) {
@@ -68,6 +69,7 @@ function showMessage(message) {
       div.remove();
     }, 3000);
   }
+  
 }
 //Set the finished tasks in order to get the percentage of progress
 function setFinishedTasks() {
@@ -117,7 +119,7 @@ function createCompletedHTML() {
   });
   setPercentage();
   setLocalStorageCompleted(); //to line 185
-}
+}//
 //Prevents multiplication of the HTML list for pending
 function restartPendingHTML() {
   while (list.firstChild) {
@@ -141,7 +143,7 @@ function completeTask(succButtonId, deleteButtonId) {
     (task) => task.id == succButtonId.dataset.id
   );
   tasks = tasks.filter((task) => task.id != deleteButtonId.dataset.id);
-  completedTasks.push(filteredTask);
+  completedTasks = [...completedTasks, filteredTask];
   createPendingHTML();
   createCompletedHTML();
 }
@@ -158,11 +160,13 @@ function setPercentage() {
   setTotalTasks();
   finishedTasks = completedTasks.length;
   const totalProgress = parseInt((completedTasks.length * 100) / totalTasks);
-  if (totalTasks > 0) {
-    progress.textContent = totalProgress;
-    return;
-  }
-  progress.textContent = 0;
+  // if (totalTasks > 0) {
+  //   progress.textContent = totalProgress;
+  //   return;
+  // }
+  // progress.textContent = 0;
+
+  totalTasks > 0 ? progress.textContent = totalProgress : progress.textContent = 0;
 }
 //Sets the total amount of tasks in order to get the percentage of progress
 function setTotalTasks() {
@@ -190,3 +194,29 @@ function setLocalStorageCompleted() {
 function setLocalStorageID() {
   localStorage.setItem("arrayForId", JSON.stringify(arrayForId));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+function setPercentage() {
+  setTotalTasks();
+  finishedTasks = completedTasks.length;
+  const totalProgress = parseInt((completedTasks.length * 100) / totalTasks);
+  // if (totalTasks > 0) {
+  //   progress.textContent = totalProgress;
+  //   return;
+  // }
+  // progress.textContent = 0;
+
+  totalTasks > 0 ? progress.textContent = totalProgress : progress.textContent = 0;
+} */
